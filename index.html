@@ -186,19 +186,11 @@
 <main>
 <!-- HERO -->
 <section class="relative h-[560px] flex items-end overflow-hidden bg-[#111]" id="home">
-  <div class="absolute inset-0 w-full h-full" id="hero-slider">
-    <div class="hero-slide active">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent z-10"></div>
-      <img alt="Aperitivos May Flower" class="w-full h-full object-cover" src="images/aperitivos-dragon.jpg"/>
-    </div>
-    <div class="hero-slide">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent z-10"></div>
-      <img alt="Pollo a la Naranja" class="w-full h-full object-cover" src="images/pollo-naranja.jpg"/>
-    </div>
-    <div class="hero-slide">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent z-10"></div>
-      <img alt="Preparación flambeada en mesa" class="w-full h-full object-cover" src="images/flambe-mesa.jpg"/>
-    </div>
+  <div class="absolute inset-0 w-full h-full">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent z-10"></div>
+    <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="images/aperitivos-dragon.jpg">
+      <source src="video/hero-banner.mp4" type="video/mp4"/>
+    </video>
   </div>
   <div class="relative z-20 w-full px-margin-mobile md:px-[60px] pb-[70px]">
     <div class="max-w-[640px]">
@@ -213,11 +205,6 @@
       <a class="bg-primary hover:bg-primary-dark text-white px-7 py-3 text-[15px] font-bold transition-colors" href="#menu">Ver menú</a>
       <a class="border-2 border-white text-white px-7 py-2.5 text-[15px] font-bold hover:bg-white hover:text-on-surface transition-colors" href="https://www.google.com/maps/search/?api=1&query=Av+de+la+Raza+5820,+32340+Ju%C3%A1rez,+Chih." target="_blank" rel="noopener">Cómo llegar</a>
     </div>
-  </div>
-  <div class="absolute top-6 right-6 z-30 flex gap-3">
-    <button class="w-2.5 h-2.5 rounded-full transition-colors slider-dot active bg-white" onclick="changeHeroSlide(0)"></button>
-    <button class="w-2.5 h-2.5 rounded-full transition-colors slider-dot bg-white/40" onclick="changeHeroSlide(1)"></button>
-    <button class="w-2.5 h-2.5 rounded-full transition-colors slider-dot bg-white/40" onclick="changeHeroSlide(2)"></button>
   </div>
 </section>
 
@@ -797,20 +784,7 @@ function closeLightbox() {
 }
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-/* Hero slider */
-let currentHeroSlide = 0;
-const heroSlides = document.querySelectorAll('.hero-slide');
-const heroDots = document.querySelectorAll('.slider-dot');
-function changeHeroSlide(index) {
-  heroSlides[currentHeroSlide].classList.remove('active');
-  heroDots[currentHeroSlide].classList.remove('active', 'bg-white');
-  heroDots[currentHeroSlide].classList.add('bg-white/40');
-  currentHeroSlide = index;
-  heroSlides[currentHeroSlide].classList.add('active');
-  heroDots[currentHeroSlide].classList.add('active', 'bg-white');
-  heroDots[currentHeroSlide].classList.remove('bg-white/40');
-}
-setInterval(() => { changeHeroSlide((currentHeroSlide + 1) % heroSlides.length); }, 5500);
+/* El hero ahora usa video de fondo en autoplay/loop, no requiere JS de slider. */
 
 /* El header ahora es estático: sin listeners de scroll ni recálculos de posición. */
 
