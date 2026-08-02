@@ -456,10 +456,10 @@ const FOOD_MENU = {
         { name: "Vigencia y restricciones", desc: "Válido de lunes a jueves. Aplican restricciones, no aplica con otras promociones." },
     ]},
     { title: "Menú Ejecutivo (incluye arroz y bebida)", items: [
-        { name: "Pollo Agridulce o Pollo con Vegetales", price: 130, desc: "Incluye arroz blanco o frito con vegetales y bebida a escoger.", img: "images/pollo-ajonjoli.jpg" },
-        { name: "Res con Brócoli, Res Kung Pao o Alitas", price: 145, desc: "En cualquier presentación. Incluye arroz y bebida a escoger.", spicy: true, img: "images/res-en-salsa.jpg" },
-        { name: "Pollo General, Pollo a la Naranja o Costilla Taw See", price: 155, desc: "Incluye arroz blanco o frito con vegetales y bebida a escoger.", img: "images/pollo-naranja.jpg" },
-        { name: "Camarón con Salsa Brava o Chow Mein de Camarón", price: 165, desc: "Incluye arroz blanco o frito con vegetales y bebida a escoger.", spicy: true, img: "images/arroz-frito-camaron.jpg" },
+        { name: "Pollo Agridulce o Pollo con Vegetales", price: 130, desc: "Incluye arroz blanco o frito con vegetales y bebida a escoger.", img: "images/ejecutivo-pollo-agridulce.jpg" },
+        { name: "Res con Brócoli, Res Kung Pao o Alitas", price: 145, desc: "En cualquier presentación. Incluye arroz y bebida a escoger.", spicy: true, img: "images/ejecutivo-res-alitas.jpg" },
+        { name: "Pollo General, Pollo a la Naranja o Costilla Taw See", price: 155, desc: "Incluye arroz blanco o frito con vegetales y bebida a escoger.", img: "images/ejecutivo-pollo-general.jpg" },
+        { name: "Camarón con Salsa Brava o Chow Mein de Camarón", price: 165, desc: "Incluye arroz blanco o frito con vegetales y bebida a escoger.", spicy: true, img: "images/ejecutivo-camaron-chowmein.jpg" },
     ]},
     { title: "Aperitivo a elegir (dentro del combo)", items: [
         { code: "A0", name: "Alitas en Salsa de Ostión" }, { code: "A1", name: "Alitas Secas" }, { code: "A2", name: "Alitas Crispy", spicy: true },
@@ -737,11 +737,11 @@ setupGroupUI(FOOD_MENU, 'food-group-tabs', 'food-accordion', false);
 /* Menú Ejecutivo destacado */
 const ejecutivo = FOOD_MENU["Combos y Ejecutivo"].cats.find(c => c.title.startsWith("Menú Ejecutivo")).items;
 document.getElementById('ejecutivo-grid').innerHTML = ejecutivo.map(it => `
-  <div class="flex flex-col h-full">
-    <div class="overflow-hidden" style="height:170px">
+  <div class="flex flex-col items-center text-center h-full">
+    <div class="w-[150px] h-[150px] rounded-full overflow-hidden shadow-lg ring-4 ring-primary/10">
       <img src="${it.img}" alt="${it.name}" class="w-full h-full object-cover"/>
     </div>
-    <h3 class="font-headline-md text-lg mt-3">${it.name}${it.spicy ? SPICY_TAG : ''}</h3>
+    <h3 class="font-headline-md text-lg mt-4">${it.name}${it.spicy ? SPICY_TAG : ''}</h3>
     <p class="text-secondary text-xs mt-1 flex-1">${it.desc}</p>
     <span class="text-primary text-sm font-bold mt-2">${money(it.price)}</span>
   </div>
