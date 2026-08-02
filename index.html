@@ -3,8 +3,91 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>May Flower Restaurant • Bar | Sabor Imperial Chino en Ciudad Juárez</title>
-<meta name="description" content="May Flower Restaurant • Bar — cocina imperial china en Ciudad Juárez. Combos, platillos a la carta, mariscos, hot pot y bar completo. Av de la Raza 5820."/>
+<title>Mayflower Restaurant Bar | Cocina China en Ciudad Juárez — 2 Sucursales</title>
+<meta name="description" content="Mayflower Restaurant Bar — cocina china tradicional en Ciudad Juárez. Combos, platillos a la carta, mariscos, hot pot y menú ejecutivo. Dos sucursales: Av. de la Raza y Plaza Bonita."/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png"/>
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png"/>
+<link rel="shortcut icon" href="images/favicon.ico"/>
+
+<!-- Open Graph / redes sociales -->
+<meta property="og:type" content="restaurant"/>
+<meta property="og:site_name" content="Mayflower Restaurant Bar"/>
+<meta property="og:title" content="Mayflower Restaurant Bar | Cocina China en Ciudad Juárez"/>
+<meta property="og:description" content="Cocina china tradicional en Ciudad Juárez. Combos, platillos a la carta, mariscos, hot pot y menú ejecutivo. Dos sucursales: Av. de la Raza y Plaza Bonita."/>
+<meta property="og:image" content="images/aperitivos-dragon.jpg"/>
+<meta property="og:locale" content="es_MX"/>
+<!-- Nota: reemplazar con la URL real una vez publicado el sitio -->
+<meta property="og:url" content="https://www.mayflowerjuarez.com/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mayflower Restaurant Bar | Cocina China en Ciudad Juárez"/>
+<meta name="twitter:description" content="Cocina china tradicional en Ciudad Juárez. Dos sucursales: Av. de la Raza y Plaza Bonita."/>
+<meta name="twitter:image" content="images/aperitivos-dragon.jpg"/>
+
+<!-- Datos estructurados Schema.org: ayuda a que Google muestre horario, dirección y teléfono en los resultados de búsqueda -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Restaurant",
+      "name": "Mayflower Restaurant Bar - Av. de la Raza",
+      "image": "images/fachada-mayflower.jpg",
+      "servesCuisine": "Chinese",
+      "priceRange": "$$",
+      "telephone": "+52-656-753-3402",
+      "acceptsReservations": "True",
+      "paymentAccepted": "Cash, Credit Card",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av de la Raza 5820",
+        "addressLocality": "Juárez",
+        "addressRegion": "Chihuahua",
+        "postalCode": "32340",
+        "addressCountry": "MX"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "08:00", "closes": "23:00" }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/restaurantemayflowercdjuarez/?locale=es_LA",
+        "https://www.instagram.com/mayflower.jrz/?hl=es",
+        "https://www.tiktok.com/@mayflowerjrz"
+      ]
+    },
+    {
+      "@type": "Restaurant",
+      "name": "Mayflower Restaurant Bar - Plaza Bonita",
+      "image": "images/fachada-mayflower.jpg",
+      "servesCuisine": "Chinese",
+      "priceRange": "$$",
+      "paymentAccepted": "Cash, Credit Card",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Tecnológico 5350-L3, Vista de La Cumbre",
+        "addressLocality": "Juárez",
+        "addressRegion": "Chihuahua",
+        "postalCode": "32663",
+        "addressCountry": "MX"
+      },
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday","Monday","Tuesday","Wednesday","Thursday"], "opens": "08:00", "closes": "22:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "08:00", "closes": "23:00" }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/restaurantemayflowercdjuarez/?locale=es_LA",
+        "https://www.instagram.com/mayflower.jrz/?hl=es",
+        "https://www.tiktok.com/@mayflowerjrz"
+      ]
+    }
+  ]
+}
+</script>
+
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet"/>
@@ -146,7 +229,11 @@
 <!-- Top Bar -->
 <div id="top-bar" class="bg-primary text-white py-2 px-margin-mobile md:px-gutter relative z-[60]">
   <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center text-[12.5px] tracking-wide gap-1">
-    <span>Dom–Jue 8:00 a.m.–10:00 p.m. · Vie–Sáb 8:00 a.m.–11:00 p.m.</span>
+    <span class="flex items-center gap-3 flex-wrap justify-center">
+      <span id="open-status" class="inline-flex items-center gap-1.5 font-bold"><span id="open-status-dot" class="w-2 h-2 rounded-full bg-white/50"></span> <span id="open-status-text">…</span></span>
+      <span class="hidden sm:inline text-white/40">·</span>
+      <span>Dom–Jue 8:00 a.m.–10:00 p.m. · Vie–Sáb 8:00 a.m.–11:00 p.m.</span>
+    </span>
     <div class="flex items-center gap-4 text-base">
       <a class="hover:text-white/70 transition-colors" href="https://www.facebook.com/restaurantemayflowercdjuarez/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
       <a class="hover:text-white/70 transition-colors" href="https://www.instagram.com/mayflower.jrz/?hl=es" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
@@ -218,7 +305,7 @@
     <div class="font-headline-lg text-xs tracking-[3px] text-primary uppercase">Recomendados</div>
     <h2 class="font-headline-lg text-3xl md:text-[32px] mt-2">Menú Ejecutivo</h2>
     <p class="text-secondary max-w-2xl mx-auto mt-3 text-sm">Todos los paquetes incluyen arroz blanco o arroz frito con vegetales, y una bebida a elegir (limonada, té helado o té shaked).</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-9 text-left" id="ejecutivo-grid"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-9 text-left lg:divide-x lg:divide-black/10" id="ejecutivo-grid"></div>
     <div class="mt-8 text-sm text-secondary space-y-1">
       <p>Agrega Rollo Primavera (1 pz) con un costo de $30.00.</p>
       <p>Lunes a jueves, todo el día. Válido en comedor y para llevar. Aplican restricciones, no aplica con otras promociones.</p>
@@ -230,17 +317,39 @@
 <!-- NOSOTROS / HISTORIA -->
 <section class="relative overflow-hidden min-h-[420px] flex items-center" id="historia">
   <div class="absolute inset-0">
-    <img alt="Fachada del restaurante May Flower" class="w-full h-full object-cover" src="images/fachada-mayflower.jpg"/>
+    <img alt="Fachada del restaurante May Flower" class="w-full h-full object-cover" src="images/fachada-mayflower.jpg" loading="lazy"/>
     <div class="absolute inset-0 bg-black/60"></div>
   </div>
-  <div class="container max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
+  <div class="container max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10 py-14">
     <div class="max-w-2xl">
       <div class="font-headline-lg text-xs tracking-[3px] text-primary-container uppercase">Nosotros</div>
       <h2 class="font-headline-lg text-3xl md:text-[38px] text-white mt-2 mb-6">Nuestra Historia</h2>
-      <p class="text-[#f2ede3] text-base leading-relaxed mb-10 max-w-[560px]">
-        Mayflower lleva a Ciudad Juárez la cocina china de tradición, en un espacio pensado para comer en familia, celebrar con amigos o disfrutar una sobremesa larga.
+      <p class="text-[#f2ede3] text-base leading-relaxed mb-8 max-w-[560px]">
+        Mayflower lleva a Ciudad Juárez la cocina china de tradición, en un espacio pensado para comer en familia, celebrar con amigos o disfrutar una sobremesa larga. Hoy contamos con dos sucursales para servirte mejor: Av. de la Raza y Plaza Bonita.
       </p>
-      <a class="bg-primary hover:bg-primary-dark text-white px-7 py-3 text-[15px] font-bold transition-colors" href="#contacto">Cómo llegar</a>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 max-w-xl">
+        <div>
+          <i class="bi bi-egg-fried text-primary-container text-2xl"></i>
+          <div class="text-white font-bold mt-2 text-sm">Tradición</div>
+          <p class="text-[#d8d3c8] text-xs mt-1">Recetas de cocina china clásica</p>
+        </div>
+        <div>
+          <i class="bi bi-star-fill text-primary-container text-2xl"></i>
+          <div class="text-white font-bold mt-2 text-sm">Calidad</div>
+          <p class="text-[#d8d3c8] text-xs mt-1">Ingredientes frescos todos los días</p>
+        </div>
+        <div>
+          <i class="bi bi-people-fill text-primary-container text-2xl"></i>
+          <div class="text-white font-bold mt-2 text-sm">Familia</div>
+          <p class="text-[#d8d3c8] text-xs mt-1">Ideal para celebrar en grupo</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a class="bg-primary hover:bg-primary-dark text-white px-7 py-3 text-[15px] font-bold transition-colors" href="#contacto">Cómo llegar</a>
+        <a class="inline-flex items-center gap-2 text-white/90 hover:text-primary-container transition-colors text-sm font-bold" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Bar+Mayflower+Av+de+la+Raza+5820+Ciudad+Juarez" target="_blank" rel="noopener">
+          <i class="bi bi-star-fill text-primary-container"></i> Miles de comensales ya nos calificaron en Google →
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -252,16 +361,24 @@
       <h2 class="font-headline-lg text-3xl md:text-[38px]">Nuestro Menú</h2>
       <p class="text-secondary max-w-2xl mx-auto mt-3 text-sm">Combos · Del mar · Aves · Res y puerco · Vegetariano · Sopas · Postres</p>
     </div>
+    <!-- Buscador -->
+    <div class="max-w-md mx-auto mb-8 relative">
+      <i class="bi bi-search absolute left-4 top-1/2 -translate-y-1/2 text-secondary"></i>
+      <input id="menu-search" type="text" placeholder="Buscar en el menú… (ej. camarón, kung pao, A0)" class="w-full border border-black/15 rounded-full pl-11 pr-10 py-3 text-sm focus:outline-none focus:border-primary transition-colors"/>
+      <button id="menu-search-clear" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-secondary hover:text-primary" aria-label="Limpiar búsqueda"><i class="bi bi-x-lg"></i></button>
+    </div>
     <!-- Tabs por grupo -->
     <div class="flex flex-wrap justify-center gap-2.5 mb-10 pb-8 border-b border-black/10" id="food-group-tabs"></div>
     <div id="food-accordion" class="max-w-3xl mx-auto space-y-3"></div>
+    <div id="menu-search-results" class="max-w-3xl mx-auto space-y-3 hidden"></div>
+    <p id="menu-search-empty" class="hidden text-center text-secondary text-sm mt-6">No encontramos platillos que coincidan con tu búsqueda.</p>
   </div>
 </section>
 
 <!-- EVENTOS PRIVADOS -->
 <section class="py-16 bg-[#1a1a1a] relative overflow-hidden">
   <div class="absolute inset-0">
-    <img alt="Servicio en mesa" class="w-full h-full object-cover opacity-30" src="images/postre-mesa.jpg"/>
+    <img alt="Servicio en mesa" class="w-full h-full object-cover opacity-30" src="images/postre-mesa.jpg" loading="lazy"/>
     <div class="absolute inset-0 bg-[#1a1a1a]/80"></div>
   </div>
   <div class="container max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10">
@@ -382,6 +499,19 @@
     </div>
   </div>
 </section>
+
+<!-- PROMOCIONES POR WHATSAPP -->
+<section class="py-12 bg-surface-container-low">
+  <div class="container max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+    <i class="bi bi-whatsapp text-primary text-3xl"></i>
+    <h3 class="font-headline-lg text-xl md:text-2xl mt-2">Recibe nuestras promociones por WhatsApp</h3>
+    <p class="text-secondary text-sm mt-2 max-w-md mx-auto">Déjanos tu número y te avisamos cuando tengamos promociones o novedades del menú.</p>
+    <form id="promo-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mt-6">
+      <input id="promo-phone" type="tel" placeholder="Tu número de WhatsApp" required class="flex-1 border border-black/20 rounded-full px-5 py-3 text-sm focus:outline-none focus:border-primary transition-colors"/>
+      <button type="submit" class="bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-full text-sm font-bold transition-colors whitespace-nowrap">Quiero promociones</button>
+    </form>
+  </div>
+</section>
 </main>
 
 <!-- LIGHTBOX -->
@@ -397,7 +527,7 @@
 <footer class="bg-[#1a1a1a] text-[#e8e3d8] pt-12 pb-8 px-margin-mobile md:px-[60px]">
   <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 text-[13px] leading-[1.8]">
     <div>
-      <img src="images/logo-full-white.png" alt="Mayflower Restaurant Bar" class="h-16 w-auto mb-3"/>
+      <img src="images/logo-full-white.png" alt="Mayflower Restaurant Bar" class="h-16 w-auto mb-3" loading="lazy"/>
       <p class="text-white/70">Cocina china tradicional y ambiente familiar en Ciudad Juárez. Combos, platillos a la carta y servicio para llevar.</p>
       <div class="flex items-center gap-4 mt-4 text-lg">
         <a class="hover:text-primary-container transition-colors" href="https://www.facebook.com/restaurantemayflowercdjuarez/?locale=es_LA" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -734,16 +864,80 @@ function setupGroupUI(data, tabsElId, accordionElId, dark) {
 
 setupGroupUI(FOOD_MENU, 'food-group-tabs', 'food-accordion', false);
 
+/* Buscador del menú: filtra en vivo sobre todas las categorías */
+(function () {
+  const input = document.getElementById('menu-search');
+  const clearBtn = document.getElementById('menu-search-clear');
+  const tabsEl = document.getElementById('food-group-tabs');
+  const accordionEl = document.getElementById('food-accordion');
+  const resultsEl = document.getElementById('menu-search-results');
+  const emptyEl = document.getElementById('menu-search-empty');
+  if (!input) return;
+
+  // Aplana todos los platillos de todas las categorías con su grupo/categoría de origen
+  const allItems = [];
+  Object.entries(FOOD_MENU).forEach(([groupName, group]) => {
+    group.cats.forEach(cat => {
+      cat.items.forEach(it => allItems.push({ ...it, group: groupName, catTitle: cat.title }));
+    });
+  });
+
+  function normalize(s) { return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+
+  function runSearch(query) {
+    const q = normalize(query.trim());
+    if (!q) {
+      tabsEl.classList.remove('hidden');
+      accordionEl.classList.remove('hidden');
+      resultsEl.classList.add('hidden');
+      emptyEl.classList.add('hidden');
+      clearBtn.classList.add('hidden');
+      return;
+    }
+    clearBtn.classList.remove('hidden');
+    tabsEl.classList.add('hidden');
+    accordionEl.classList.add('hidden');
+
+    const matches = allItems.filter(it =>
+      normalize(it.name).includes(q) ||
+      (it.desc && normalize(it.desc).includes(q)) ||
+      (it.code && normalize(it.code).includes(q))
+    );
+
+    if (matches.length === 0) {
+      resultsEl.classList.add('hidden');
+      emptyEl.classList.remove('hidden');
+      return;
+    }
+    emptyEl.classList.add('hidden');
+    resultsEl.classList.remove('hidden');
+    resultsEl.innerHTML = matches.map(it => `
+      <div class="flex items-center justify-between gap-4 py-3 px-4 border border-black/10 rounded-lg">
+        <div>
+          <span class="text-[10px] uppercase tracking-wide text-secondary font-bold">${it.group}</span>
+          <p class="font-bold text-on-surface">${it.code ? `<span class="item-code">${it.code}</span>` : ''}${it.name}${it.spicy ? SPICY_TAG : ''}</p>
+          ${it.desc ? `<p class="text-sm text-secondary italic mt-0.5">${it.desc}</p>` : ''}
+        </div>
+        ${it.price ? `<span class="price-badge-sm">${money(it.price)}</span>` : ''}
+      </div>
+    `).join('');
+  }
+
+  input.addEventListener('input', () => runSearch(input.value));
+  clearBtn.addEventListener('click', () => { input.value = ''; runSearch(''); input.focus(); });
+})();
+
 /* Menú Ejecutivo destacado */
 const ejecutivo = FOOD_MENU["Combos y Ejecutivo"].cats.find(c => c.title.startsWith("Menú Ejecutivo")).items;
 document.getElementById('ejecutivo-grid').innerHTML = ejecutivo.map(it => `
   <div class="flex flex-col items-center text-center h-full">
     <div class="w-[150px] h-[150px] rounded-full overflow-hidden shadow-lg ring-4 ring-primary/10">
-      <img src="${it.img}" alt="${it.name}" class="w-full h-full object-cover"/>
+      <img src="${it.img}" alt="${it.name}" class="w-full h-full object-cover" loading="lazy"/>
     </div>
     <h3 class="font-headline-md text-lg mt-4">${it.name}${it.spicy ? SPICY_TAG : ''}</h3>
     <p class="text-secondary text-xs mt-1 flex-1">${it.desc}</p>
-    <span class="text-primary text-sm font-bold mt-2">${money(it.price)}</span>
+    <div class="w-10 h-px bg-primary/25 my-3"></div>
+    <span class="text-primary text-sm font-bold">${money(it.price)}</span>
   </div>
 `).join('');
 
@@ -761,7 +955,7 @@ const GALLERY_ITEMS = [
 document.getElementById('gallery-grid').innerHTML = GALLERY_ITEMS.map(g => `
   <div class="gallery-tile group flex flex-col items-center text-center w-full max-w-[220px] cursor-pointer" onclick="openLightbox('${g.img}', '${g.name.replace(/'/g, "\\'")}')">
     <div class="relative w-full aspect-square rounded-full overflow-hidden shadow-lg ring-4 ring-primary/10 group-hover:ring-primary/40 transition-all">
-      <img alt="${g.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="${g.img}"/>
+      <img alt="${g.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" src="${g.img}" loading="lazy"/>
     </div>
     <span class="mt-4 text-sm font-bold text-on-surface leading-snug">${g.name}</span>
   </div>
@@ -813,6 +1007,43 @@ if (contactForm) {
     window.open('https://wa.me/526567533402?text=' + encodeURIComponent(texto), '_blank');
   });
 }
+
+/* Formulario de promociones -> abre WhatsApp con el número capturado (opt-in, sin backend) */
+const promoForm = document.getElementById('promo-form');
+if (promoForm) {
+  promoForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const phone = document.getElementById('promo-phone').value.trim();
+    const texto = `Hola Mayflower, quiero recibir promociones por WhatsApp. Mi número es ${phone}.`;
+    window.open('https://wa.me/526567533402?text=' + encodeURIComponent(texto), '_blank');
+  });
+}
+
+/* Indicador de Abierto ahora / Cerrado, calculado con la hora real de Ciudad Juárez */
+function updateOpenStatus() {
+  const dotEl = document.getElementById('open-status-dot');
+  const textEl = document.getElementById('open-status-text');
+  if (!dotEl || !textEl) return;
+  try {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Ciudad_Juarez', hour12: false, weekday: 'short', hour: '2-digit', minute: '2-digit'
+    }).formatToParts(new Date());
+    const map = {};
+    parts.forEach(p => map[p.type] = p.value);
+    const day = map.weekday;
+    const minutesNow = parseInt(map.hour, 10) * 60 + parseInt(map.minute, 10);
+    const isFriSat = (day === 'Fri' || day === 'Sat');
+    const openMin = 8 * 60;
+    const closeMin = isFriSat ? 23 * 60 : 22 * 60;
+    const isOpen = minutesNow >= openMin && minutesNow < closeMin;
+    dotEl.className = 'w-2 h-2 rounded-full ' + (isOpen ? 'bg-[#4ade80]' : 'bg-white/50');
+    textEl.textContent = isOpen ? 'Abierto ahora' : 'Cerrado ahora';
+  } catch (e) {
+    textEl.textContent = '';
+  }
+}
+updateOpenStatus();
+setInterval(updateOpenStatus, 60000);
 
 /* Animación de revelado al hacer scroll */
 document.querySelectorAll('section').forEach(el => el.classList.add('reveal'));
